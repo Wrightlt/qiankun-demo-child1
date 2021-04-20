@@ -6,6 +6,7 @@ import store from './store';
 import './public-path'
 
 Vue.config.productionTip = false;
+Vue.use(VueRouter);
 
 
 // 声明变量管理vue及路由实例
