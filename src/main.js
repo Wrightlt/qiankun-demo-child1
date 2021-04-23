@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from './App1.vue'
 import VueRouter from 'vue-router'
 import routes from './router'
 import store from './store'
@@ -16,7 +16,7 @@ function render(props = {}) {
   const { container } = props
   router = new VueRouter({
     // base: window.__POWERED_BY_QIANKUN__ ? '/app-vue/' : '/',
-    base: window.__POWERED_BY_QIANKUN__ ? "/aaa" : "/",
+    base: window.__POWERED_BY_QIANKUN__ ? "/portal/aaa" : "/",
     mode: 'history',
     routes,
   })
@@ -25,7 +25,7 @@ function render(props = {}) {
     router,
     store,
     render: h => h(App),
-  }).$mount(container ? container.querySelector('#app') : '#app')
+  }).$mount(container ? container.querySelector('#appFirst') : '#appFirst')
 }
 
 // 独立运行时
