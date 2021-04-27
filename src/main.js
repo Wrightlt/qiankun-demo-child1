@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import routes from './router'
 import store from './store'
 import './public-path'
+import actions from './shared/actions'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
@@ -14,6 +15,10 @@ let router = null
 let instance = null
 function render(props = {}) {
   const { container } = props
+  if (props) {
+    // 注入 actions 实例
+    actions.setActions(props)
+  }
   router = new VueRouter({
     // base: window.__POWERED_BY_QIANKUN__ ? '/app-vue/' : '/',
     base: window.__POWERED_BY_QIANKUN__ ? "/portal/aaa" : "/",
